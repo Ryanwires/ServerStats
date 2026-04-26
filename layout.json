@@ -1,0 +1,55 @@
+{
+  "canvas": {
+    "width": 122,
+    "height": 250
+  },
+  "items": {
+    "clock": {
+      "label": "Clock",
+      "x": 90,
+      "y": 0
+    },
+    "server_ip": {
+      "label": "Server IP",
+      "x": 90,
+      "y": 35
+    },
+    "cpu": {
+      "label": "CPU",
+      "x": 5,
+      "y": 0
+    },
+    "temp": {
+      "label": "Temp",
+      "x": 5,
+      "y": 20
+    },
+    "disk": {
+      "label": "Disk",
+      "x": 5,
+      "y": 40
+    },
+    "uptime_hours": {
+      "label": "Uptime",
+      "x": 5,
+      "y": 60
+    },
+    "ram_label": {
+      "label": "RAM Label",
+      "x": 5,
+      "y": 80
+    },
+    "ram_bar": {
+      "label": "RAM Bar",
+      "x": 5,
+      "y": 100,
+      "width": 120,
+      "height": 10
+    },
+    "offline": {
+      "label": "Offline",
+      "x": 5,
+      "y": 5
+    }
+  }
+}
