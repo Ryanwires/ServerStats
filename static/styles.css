@@ -1,0 +1,148 @@
+:root {
+  color-scheme: light;
+  --bg: #f5efe2;
+  --panel: rgba(255, 251, 245, 0.86);
+  --ink: #16130f;
+  --muted: #6f665c;
+  --accent: #b04f22;
+  --accent-strong: #8a3611;
+  --grid: rgba(22, 19, 15, 0.14);
+  --shadow: 0 24px 60px rgba(73, 47, 16, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 30%),
+    linear-gradient(135deg, #e8dcc6 0%, #d7c1a0 46%, #be9f73 100%);
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+}
+
+.panel {
+  border: 1px solid rgba(22, 19, 15, 0.08);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.intro {
+  padding: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-strong);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.95;
+}
+
+.copy,
+.status {
+  max-width: 48rem;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.actions button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fffdf8;
+  cursor: pointer;
+}
+
+.actions button.ghost {
+  background: rgba(22, 19, 15, 0.08);
+  color: var(--ink);
+}
+
+.workspace {
+  padding: 24px;
+}
+
+.canvas-wrap {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+.canvas {
+  position: relative;
+  width: min(100%, 488px);
+  aspect-ratio: 122 / 250;
+  border-radius: 8px;
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    #fcfaf7;
+  background-size: 20px 20px;
+  border: 2px solid rgba(22, 19, 15, 0.2);
+  overflow: hidden;
+}
+
+.draggable-item {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid rgba(22, 19, 15, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  box-shadow: 0 10px 20px rgba(22, 19, 15, 0.12);
+  cursor: grab;
+  touch-action: none;
+}
+
+.draggable-item.dragging {
+  cursor: grabbing;
+  z-index: 2;
+  background: #fff4e9;
+  border-color: var(--accent);
+}
+
+@media (min-width: 900px) {
+  .app-shell {
+    grid-template-columns: minmax(280px, 360px) minmax(480px, 1fr);
+    align-items: start;
+  }
+
+  .workspace {
+    min-height: calc(100vh - 48px);
+  }
+}
