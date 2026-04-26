@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ServerStats Layout Editor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel intro">
+        <p class="eyebrow">ServerStats</p>
+        <h1>Layout editor</h1>
+        <p class="copy">Drag any label on the preview to choose where it should render on the display, then save the layout.</p>
+        <div class="actions">
+          <button id="saveButton" type="button">Save layout</button>
+          <button id="resetButton" type="button" class="ghost">Reset view</button>
+        </div>
+        <p id="status" class="status">Loading layout...</p>
+      </section>
+
+      <section class="panel workspace">
+        <div class="canvas-wrap">
+          <div id="canvas" class="canvas" aria-label="Display preview"></div>
+        </div>
+      </section>
+    </main>
+
+    <template id="itemTemplate">
+      <button type="button" class="draggable-item"></button>
+    </template>
+
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </body>
+</html>
